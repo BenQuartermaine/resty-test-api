@@ -21,3 +21,4 @@ class RestaurantPolicy < ApplicationPolicy
     update?
   end
 end
+
