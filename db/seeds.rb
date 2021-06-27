@@ -10,6 +10,18 @@ require 'faker'
 
 puts 'Starting seeds'
 
+  
+  main_user = User.new(email: "ben@gmail.com", password: '123456')
+  main_user.save
+  restaurant = Restaurant.new(name: "Marion", address: "Gertrude Street", user_id: user.id)
+  restaurant.save
+  restaurant = Restaurant.new(name: "Cutler & Co", address: "Gertrude Street", user_id: user.id)
+  restaurant.save
+  restaurant = Restaurant.new(name: "Artichoke paradise", address: "Heaven", user_id: user.id)
+  restaurant.save
+  comment = Comment.new(content: Faker::Quote.famous_last_words, user_id: main_user.id, restaurant_id: restaurant.id)
+  comment.save
+
   10.times do
     user = User.new(email: Faker::Internet.email, password: '123456')
     user.save
